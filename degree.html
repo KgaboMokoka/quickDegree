@@ -6,6 +6,15 @@
     <title>Bachelor of Science (B.Sc.)</title>
     <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
     <style>
+        *{
+            background-color: whitesmoke;
+        }
+        a{
+            text-decoration: none;
+        }
+        a:visited{
+            color: black;
+        }
         h1, h2{
             font-family: "UnifrakturCook", cursive;
         }
@@ -22,6 +31,7 @@
 </head>
 <body>
     <div id="degree-body">
+        <a href="index.html">←</a>
         <h1>University of Your Mother</h1>
 
         <p>
@@ -30,7 +40,7 @@
         The Board of Extremely Unqualified Trustees hereby confers upon:
         </p>
 
-        <h2>Name Surname</h2>
+        <h2 id="name">Name Surname</h2>
 
         <p>The honorary degree of</p>
 
@@ -48,6 +58,12 @@
         <p>On this very questionable day.</p>
     </div>
 
-    <script></script>
+    <script>
+        // Retrieve the name from localStorage
+        const storedName = localStorage.getItem("friendName");
+        if(storedName) {
+            document.getElementById("name").textContent = storedName;
+        }
+    </script>
 </body>
 </html>

@@ -6,12 +6,13 @@
     <title>Instant Degree</title>
 </head>
 <style>
-    form{
+    a{
         display: flex;
         justify-content: center;
         align-items: center;
         margin: 0;
         padding: 0;
+        text-decoration: none;
     }
     button{
         width: 100px;
@@ -22,5 +23,21 @@
     <a href="degree.html" >
         <button id="btn" type="submit">Click Me !</button>
     </a>
+
+    <script>
+        const btn = document.getElementById("btn"); 
+        btn.addEventListener('click', () =>{
+            const name = prompt("Enter name and surname"); 
+            if(name && name.trim() !== "") {
+                // Store the name in localStorage
+                localStorage.setItem("friendName", name.trim());
+
+                // Go to degree page
+                window.location.href = "degree.html";
+            } else {
+                alert("Please enter a valid name!");
+            }
+        })
+    </script>
 </body>
 </html>
